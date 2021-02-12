@@ -5,21 +5,21 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.TabCompleter;
 
-public class API {
+public final class API {
 
-    public String msg(String msg) {
+    public static String msg(String msg) {
         return ChatColor.translateAlternateColorCodes('&', msg);
     }
 
-    public void addCmd(String cmd, CommandExecutor executor) {
+    public static void addCmd(String cmd, CommandExecutor executor) {
         Bukkit.getPluginCommand(cmd).setExecutor(executor);
     }
 
-    public void addTab(String cmd, TabCompleter completer) {
+    public static void addTab(String cmd, TabCompleter completer) {
         Bukkit.getPluginCommand(cmd).setTabCompleter(completer);
     }
 
-    public void startup(String pluginName, String enablingDisabling, String discordUrl, String authors, String version, String pluginUrl, String wikiUrl) {
+    public static void startup(String pluginName, String enablingDisabling, String discordUrl, String authors, String version, String pluginUrl, String wikiUrl) {
         Bukkit.getConsoleSender().sendMessage(msg(""));
         Bukkit.getConsoleSender().sendMessage(msg("&8[]=====[" + enablingDisabling + " " + pluginName + " &cfrom BE Development&8]=====[]"));
         Bukkit.getConsoleSender().sendMessage(msg("&8|"));
