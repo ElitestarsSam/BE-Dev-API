@@ -7,6 +7,10 @@ import org.bukkit.command.TabCompleter;
 
 public final class API {
 
+    private API() {
+
+    }
+
     public static String msg(String msg) {
         return ChatColor.translateAlternateColorCodes('&', msg);
     }
